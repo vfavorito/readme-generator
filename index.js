@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const pictures = "";
 const contribution ="";
-const license = "";
+const licenseBadge = "";
 
 const getInfo = () =>
     inquirer.prompt([
@@ -80,8 +80,30 @@ const contributionDefined = (responses) => {
         contribution = "here are the guidelines for doing so: \/n responses.Contribution";
     }
 }
+const licenseBadgeDefined = (responses) => {
+    if(responses.License === "MIT"){
+        licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    }
+    else if(responses.License === "GNU AGPLv3"){
+        licenseBadge = "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)"
+    }
+    else if(responses.License === "GNU GPLv3"){
+        licenseBadge = "[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)"
+    }
+    else if(responses.License === "GNU LGPLv3"){
+        licenseBadge = "[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)"
+    }
+    else if(responses.License === "Apache 2.0"){
+        licenseBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+    }
+    else if(responses.License === "The Unlicense"){
+        licenseBadge = "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"
+    }
+}
 const generateReadme = (responses) =>
 `# ${responses.RepoTitle}
+
+${licenseBadge}
 
 ### Overview:
 ${responses.AppDescription}  
@@ -111,6 +133,7 @@ const writeReadme = async () => {
         const responses = await getInfo();
         insertPics(responses);
         contributionDefined(responses);
+        licenseBadgeDefined(responses)
         const readMe = generateReadme(responses);
         await writeFileAsync("README.md", readMe);
         console.log("It is done my master");
