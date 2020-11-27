@@ -22,14 +22,14 @@ Start Prompts <br/> ![startPrompts](images/initialPrompts.png) <br/><br/>Answer 
 Here is a link to the README Generator!:  [https://github.com/vfavorito/readme-generator](https://github.com/vfavorito/readme-generator)
 
 ### Installation
-After cloning the repo onto your local machine get into that directory via terminal/gitbash.  Then run command npm i to install inquirer.  After that you are good to go!
+After cloning the repository onto your local machine get into that directory via terminal/gitbash.  Then run command npm i to install all packages.  After that you are good to go!
 
 ### Contributing
 If you would like to contribute to the development of this app the guidelines for doing so can be found here: [Contribution Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.txt)
 
 ### Questions?
 Visit my Github profile here: [vfavorito](https://github.com/vfavorito)<br/>
-If you have any questions you can reach out to me @ vince.favorito@gmail.com
+If you have any questions you can reach out to me at vince.favorito@gmail.com
 
 ### License
 This App is covered under the MIT License
