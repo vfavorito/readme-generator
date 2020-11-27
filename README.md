@@ -21,7 +21,8 @@ Answer Questions <br/> ![ansQuestions](images/ansQuestions.png) <br/><br/>
 View Readme <br/> ![viewReadme](images/readme.png) <br/><br/>
 
 ### Example
-Here is a link to the README Generator!:  [https://github.com/vfavorito/readme-generator](https://github.com/vfavorito/readme-generator)
+Here is a link to the README Generator!:  [https://github.com/vfavorito/readme-generator](https://github.com/vfavorito/readme-generator)<br/>
+Here is a link to an example video of how to use the generator: [Example](https://drive.google.com/file/d/1_RfnJctB-au6l0SbAVAnw0J6g2_EFZaI/view)
 
 ### Installation
 After cloning the repository onto your local machine get into that directory via terminal/gitbash.  Then run command npm i to install all packages.  After that you are good to go!
