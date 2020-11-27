@@ -71,9 +71,18 @@ const insertPics = (responses) => {
         pictures += picInsertion;
     }
 }
+const contribution = (responses) => {
+    if(responses.Contribution === "Contribution Covenant"){
+        contribution = "the guidelines for doing so can be found here:[${Contribution Covenant}](${https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.txt})";
+    }
+    else{
+        contribution = "here are the guidelines for doing so: \/n responses.Contribution";
+    }
+}
+
 
 const generateReadme = (responses) =>
-    `# ${responses.RepoTitle}
+`# ${responses.RepoTitle}
 
 ### Overview:
 ${responses.AppDescription}  
@@ -90,22 +99,19 @@ Here is a link to the ${responses.RepoTitle}:  [${responses.AppLink}](${response
 ${responses.Installation}
 
 ### Contributing
-If you would like to contribute to the development of this app the guidelines for doing so can be found here: 
+If you would like to contribute to the development of this app ${contribution}
 
 
 ### License
-Copyright <2020> < Vincent Favorito >
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
+`
 const writeReadme = async () => {
     console.log("Lets Create A Top-Notch Readme File!");
     try{
         const responses = await getInfo();
         insertPics(responses);
+        contribution(responses);
         const readMe = generateReadme(responses);
         await writeFileAsync("README.md", readMe);
         console.log("It is done my master");
