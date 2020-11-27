@@ -83,8 +83,8 @@ const contributionDefined = (responses) => {
     }
     else{
         contribution = "here are the guidelines for doing so: <br/> Write your guidelines here";
-    }
-}
+    };
+};
 const licenseBadgeDefined = (responses) => {
     if(responses.License === "MIT"){
         licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
@@ -103,8 +103,8 @@ const licenseBadgeDefined = (responses) => {
     }
     else if(responses.License === "The Unlicense"){
         licenseBadge = "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"
-    }
-}
+    };
+};
 const generateReadme = (responses) =>
 `# ${responses.RepoTitle}
 
@@ -152,7 +152,7 @@ const writeReadme = async () => {
         const responses = await getInfo();
         insertPics(responses);
         contributionDefined(responses);
-        licenseBadgeDefined(responses)
+        licenseBadgeDefined(responses);
         const readMe = generateReadme(responses);
         await writeReadmeAsync("README.md", readMe);
         console.log("It is done my master");
