@@ -4,9 +4,9 @@ const util = require("util");
 
 const writeReadmeAsync = util.promisify(fs.writeFile);
 
-const pictures = "";
-const contribution ="";
-const licenseBadge = "";
+let pictures = "";
+let contribution ="";
+let licenseBadge = "";
 
 const getInfo = () =>
     inquirer.prompt([
@@ -47,6 +47,7 @@ const getInfo = () =>
             message: "Will you be using the contribution covenant or writing your own guidelines?",
             choices: ["Contribution Covenant", "Write My Own"]
         },
+        
         {
             type: "input",
             name: "Test",
@@ -72,16 +73,16 @@ const getInfo = () =>
 
 const insertPics = (responses) => {
     for (i = 0; i < parseInt(responses.PicCount); i++) {
-        const picInsertion = "## PicDesc.\/n ![picAlt](picPath)\/n";
+        const picInsertion = "PicDesc <br/> ![picAlt](picPath) <br/><br/>";
         pictures += picInsertion;
     }
 }
 const contributionDefined = (responses) => {
     if(responses.Contribution === "Contribution Covenant"){
-        contribution = "the guidelines for doing so can be found here:[${Contribution Covenant}](${https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.txt})";
+        contribution = "the guidelines for doing so can be found here: [Contribution Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.txt)";
     }
     else{
-        contribution = "here are the guidelines for doing so: \/n responses.Contribution";
+        contribution = "here are the guidelines for doing so: <br/> Write your guidelines here";
     }
 }
 const licenseBadgeDefined = (responses) => {
@@ -109,10 +110,18 @@ const generateReadme = (responses) =>
 
 ${licenseBadge}
 
-### Overview:
+## Overview:
 ${responses.AppDescription}  
 
-## How it works!
+### Table of Contents:
+1. [How it works](#How it works!)
+2. [Example](#Example)
+3. [Installation](#Installation)
+4. [Contributing](#Contributing)
+5. [Questions](#Questions?)
+6. [License](#License)
+
+### How it works!
 ${responses.Usage}
 
 ${pictures}
@@ -127,7 +136,7 @@ ${responses.Installation}
 If you would like to contribute to the development of this app ${contribution}
 
 ### Questions?
-Visit my Github profile here: [${responses.Github}](https://github.com/${responses.Github})
+Visit my Github profile here: [${responses.Github}](https://github.com/${responses.Github})<br/>
 If you have any questions you can reach out to me @ ${responses.EmailAddress}
 
 ### License
