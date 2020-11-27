@@ -114,12 +114,13 @@ ${licenseBadge}
 ${responses.AppDescription}  
 
 ### Table of Contents:
-1. [How it works](#How it works!)
+1. [How it works](#How-it-works)
 2. [Example](#Example)
 3. [Installation](#Installation)
-4. [Contributing](#Contributing)
-5. [Questions](#Questions?)
-6. [License](#License)
+4. [Test](#Test)
+5. [Contributing](#Contributing)
+6. [Questions](#Questions?)
+7. [License](#License)
 
 ### How it works!
 ${responses.Usage}
@@ -132,17 +133,19 @@ Here is a link to the ${responses.RepoTitle}:  [${responses.AppLink}](${response
 ### Installation
 ${responses.Installation}
 
+### Test
+${responses.Test}
+
 ### Contributing
 If you would like to contribute to the development of this app ${contribution}
 
 ### Questions?
 Visit my Github profile here: [${responses.Github}](https://github.com/${responses.Github})<br/>
-If you have any questions you can reach out to me @ ${responses.EmailAddress}
+If you have any questions you can reach out to me at ${responses.EmailAddress}
 
 ### License
-This App is covered under the ${responses.License} License
+This App is covered under the ${responses.License} License`
 
-`
 const writeReadme = async () => {
     console.log("Lets Create A Top-Notch Readme File!");
     try{

@@ -1,9 +1,9 @@
-# Readme-Generator
+# README Generator!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview:
-This app takes in user input via node and inquirer and creates a customized Readme  
+This app allows the prompting of questions via node and inquirer.  After answering the questions a README markdown document will be written based off of the answers given by the user.  This was primarily accomplished using Javascript, node.JS, and the Inquirer npm.  
 
 ### Table of Contents:
 1. [How it works](#How-it-works)
@@ -14,15 +14,15 @@ This app takes in user input via node and inquirer and creates a customized Read
 6. [License](#License)
 
 ### How it works!
-The app works by taking answers from the user and iserting that data into a readme file it writes
+Once you are in the correct directory enter node index.js into your terminal and that will launch the prompt questions.  Answer the questions and then see the magic!
 
-PicDesc <br/> ![picAlt](picPath) <br/><br/>PicDesc <br/> ![picAlt](picPath) <br/><br/>PicDesc <br/> ![picAlt](picPath) <br/><br/>
+PicDesc <br/> ![picAlt](picPath) <br/><br/>PicDesc <br/> ![picAlt](picPath) <br/><br/>
 
 ### Example
-Here is a link to the Readme-Generator:  [https://github.com/vfavorito](https://github.com/vfavorito)
+Here is a link to the README Generator!:  [https://github.com/vfavorito/readme-generator](https://github.com/vfavorito/readme-generator)
 
 ### Installation
-clone this repo into vs code and run npm i to install inquirer
+After cloning the repo onto your local machine get into that directory via terminal/gitbash.  Then run command npm i to install inquirer.  After that you are good to go!
 
 ### Contributing
 If you would like to contribute to the development of this app the guidelines for doing so can be found here: [Contribution Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.txt)
