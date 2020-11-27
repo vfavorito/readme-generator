@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const pictures = "";
 const contribution ="";
+const license = "";
 
 const getInfo = () =>
     inquirer.prompt([
@@ -71,7 +72,7 @@ const insertPics = (responses) => {
         pictures += picInsertion;
     }
 }
-const contribution = (responses) => {
+const contributionDefined = (responses) => {
     if(responses.Contribution === "Contribution Covenant"){
         contribution = "the guidelines for doing so can be found here:[${Contribution Covenant}](${https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.txt})";
     }
@@ -79,8 +80,6 @@ const contribution = (responses) => {
         contribution = "here are the guidelines for doing so: \/n responses.Contribution";
     }
 }
-
-
 const generateReadme = (responses) =>
 `# ${responses.RepoTitle}
 
@@ -103,7 +102,7 @@ If you would like to contribute to the development of this app ${contribution}
 
 
 ### License
-
+This App is covered under the ${responses.License} License
 
 `
 const writeReadme = async () => {
@@ -111,7 +110,7 @@ const writeReadme = async () => {
     try{
         const responses = await getInfo();
         insertPics(responses);
-        contribution(responses);
+        contributionDefined(responses);
         const readMe = generateReadme(responses);
         await writeFileAsync("README.md", readMe);
         console.log("It is done my master");
