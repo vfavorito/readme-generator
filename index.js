@@ -1,3 +1,4 @@
+// calling all packages need to make this work
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
@@ -7,7 +8,7 @@ const writeReadmeAsync = util.promisify(fs.writeFile);
 let pictures = "";
 let contribution ="";
 let licenseBadge = "";
-
+// the questions the user will answer
 const getInfo = () =>
     inquirer.prompt([
         {
@@ -70,13 +71,14 @@ const getInfo = () =>
             message: "what is your email address?"
         }
     ]);
-
+// function that will add picture slots to readme
 const insertPics = (responses) => {
     for (i = 0; i < parseInt(responses.PicCount); i++) {
         const picInsertion = "PicDesc <br/> ![picAlt](picPath) <br/><br/>";
         pictures += picInsertion;
     }
 }
+// function that will update contributing section of readme based off of user response
 const contributionDefined = (responses) => {
     if(responses.Contribution === "Contribution Covenant"){
         contribution = "the guidelines for doing so can be found here: [Contribution Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.txt)";
@@ -85,6 +87,7 @@ const contributionDefined = (responses) => {
         contribution = "here are the guidelines for doing so: <br/> Write your guidelines here";
     };
 };
+// function that will add the license badge the user selected to the readme
 const licenseBadgeDefined = (responses) => {
     if(responses.License === "MIT"){
         licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
@@ -105,6 +108,8 @@ const licenseBadgeDefined = (responses) => {
         licenseBadge = "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"
     };
 };
+
+// function that makes the readme file and assigns it to the variable generateReadme
 const generateReadme = (responses) =>
 `# ${responses.RepoTitle}
 
@@ -146,6 +151,7 @@ If you have any questions you can reach out to me at ${responses.EmailAddress}
 ### License
 This App is covered under the ${responses.License} License`
 
+// main function that will call the questions then run functions from responses then acually creates the README.md file
 const writeReadme = async () => {
     console.log("Lets Create A Top-Notch Readme File!");
     try{
