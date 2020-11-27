@@ -17,8 +17,8 @@ This app allows the prompting of questions via node and inquirer.  After answeri
 Once you are in the correct directory enter node index.js into your terminal and that will launch the prompt questions.  Answer the questions and then see the magic!
 
 Start Prompts <br/> ![startPrompts](images/initialPrompts.png) <br/><br/>
-Answer Questions <br/> ![ansQuestions](images/ansQuestions.PNG) <br/><br/>
-View Readme <br/> ![viewReadme](images/readme.PNG) <br/><br/>
+Answer Questions <br/> ![ansQuestions](images/ansQuestions.png) <br/><br/>
+View Readme <br/> ![viewReadme](images/readme.png) <br/><br/>
 
 ### Example
 Here is a link to the README Generator!:  [https://github.com/vfavorito/readme-generator](https://github.com/vfavorito/readme-generator)
