@@ -1,5 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const util = require("util");
+
+const writeReadmeAsync = util.promisify(fs.writeFile);
+
 const pictures = "";
 const contribution ="";
 const licenseBadge = "";
@@ -56,7 +60,7 @@ const getInfo = () =>
         },
         {
             type: "input",
-            name: "GithubName",
+            name: "Github",
             message: "What is your Github Username?"
         },
         {
@@ -122,6 +126,9 @@ ${responses.Installation}
 ### Contributing
 If you would like to contribute to the development of this app ${contribution}
 
+### Questions?
+Visit my Github profile here: [${responses.Github}](https://github.com/${responses.Github})
+If you have any questions you can reach out to me @ ${responses.EmailAddress}
 
 ### License
 This App is covered under the ${responses.License} License
@@ -135,7 +142,7 @@ const writeReadme = async () => {
         contributionDefined(responses);
         licenseBadgeDefined(responses)
         const readMe = generateReadme(responses);
-        await writeFileAsync("README.md", readMe);
+        await writeReadmeAsync("README.md", readMe);
         console.log("It is done my master");
     }
     catch(error){
