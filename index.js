@@ -124,7 +124,7 @@ ${responses.AppDescription}
 3. [Installation](#Installation)
 4. [Test](#Test)
 5. [Contributing](#Contributing)
-6. [Questions](#Questions?)
+6. [Questions](#Questions)
 7. [License](#License)
 
 ### How it works!
