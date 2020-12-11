@@ -10,7 +10,7 @@ This app allows the prompting of questions via node and inquirer.  After answeri
 2. [Example](#Example)
 3. [Installation](#Installation)
 4. [Contributing](#Contributing)
-5. [Questions](#Questions?)
+5. [Questions](#Questions)
 6. [License](#License)
 
 ### How it works!
